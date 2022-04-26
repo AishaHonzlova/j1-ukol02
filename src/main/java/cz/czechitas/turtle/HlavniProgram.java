@@ -91,5 +91,4 @@ public class HlavniProgram {
         nakresliNohy(zofka);
         nakresliRuce(zofka);
     }
-
 }
