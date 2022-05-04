@@ -12,6 +12,8 @@ public class HlavniProgram {
         zofka = new Turtle();
         nakresliZmrzlinu(zofka);
         nakresliSnehulaka(zofka);
+        nakresliLokomotivu(zofka);
+
     }
 
     //ZMRZLINA
@@ -79,7 +81,7 @@ public class HlavniProgram {
         zofka.turnRight(90);
 
         zofka.penDown();
-        for(int i = 0; i < 72.8; i++) {
+        for(int i = 0; i < 72.2; i++) {
             zofka.turnLeft(5);
             zofka.move(2);
         }
@@ -90,5 +92,66 @@ public class HlavniProgram {
         nakresliTelo(zofka);
         nakresliNohy(zofka);
         nakresliRuce(zofka);
+    }
+
+    // LOKOMOTIVA
+
+    private void nakresliObdelnik(Turtle zofka, double dlouhaStrana, double kratkaStrana) {
+
+        zofka.setLocation(600, 400);
+        zofka.setPenColor(Color.DARK_GRAY);
+        for(int i= 0; i < 2; i++) {
+            zofka.move(dlouhaStrana);
+            zofka.turnLeft(90);
+            zofka.move(kratkaStrana);
+            zofka.turnLeft(90);
+        }
+
+    }
+    private void nakresliVelkeKolo(Turtle zofka) {
+        for(int i = 0; i < 90; i++) {
+            zofka.turnLeft(4);
+            zofka.move(5.3);
+        }
+    }
+    private void nakresliObdelnikHorizontalne(Turtle zofka, double dlouhaStrana, double kratkaStrana) {
+            zofka.turnLeft(90);
+            zofka.move(150);
+        for(int i= 0; i < 2; i++) {
+            zofka.move(dlouhaStrana);
+            zofka.turnRight(90);
+            zofka.move(kratkaStrana);
+            zofka.turnRight(90);
+        }
+    }
+    private void nakresliKolecka(Turtle zofka) {
+        zofka.move(60);
+        for(int i = 0; i < 90; i++) {
+            zofka.turnLeft(4);
+            zofka.move(2);
+        }
+        zofka.move(120);
+        for(int i = 0; i < 90; i++) {
+            zofka.turnLeft(4);
+            zofka.move(2);
+        }
+    }
+    private void nakresliNaraznik(Turtle zofka) {
+        zofka.move(70);
+        zofka.turnLeft(90);
+        zofka.move(45);
+        zofka.turnRight(90);
+        zofka.move(100);
+        zofka.turnRight(135);
+        zofka.move(145);
+        zofka.turnRight(135);
+
+    }
+    private void nakresliLokomotivu(Turtle zofka) {
+        nakresliObdelnik(zofka, 200, 150);
+        nakresliVelkeKolo(zofka);
+        nakresliObdelnikHorizontalne(zofka,250, 100);
+        nakresliKolecka(zofka);
+        nakresliNaraznik(zofka);
     }
 }
